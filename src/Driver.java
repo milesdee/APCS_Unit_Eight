@@ -1,10 +1,8 @@
 import java.awt.*;
+import java.io.FileNotFoundException;
 
-public class Driver
-{
-
-    public static void main(String[] args){
-
+public class Driver {
+    public static void main(String[] args) throws FileNotFoundException {
         //construct DrawingPanel, and get its Graphics context
         DrawingPanel panel = new DrawingPanel(840, 480);
         Graphics g = panel.getGraphics();
@@ -38,9 +36,5 @@ public class Driver
         g.setColor(Color.GREEN); //set brush to green for drawing best path
         totalChange = map.drawLowestElevPath(g, bestRow);
         System.out.println("The Lowest-Elevation-Change Path starts at row: "+bestRow+" and gives a total change of: "+totalChange);
-
-
     }
-
-
 }
